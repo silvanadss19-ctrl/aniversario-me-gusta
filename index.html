@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ao meu Me Gusta - Aniversário</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { margin: 0; padding: 0; background: #0f172a; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; color: #f8fafc; }
+    
+    .presentation-wrapper {
+      max-width: 1280px;
+      margin: 40px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding: 0 20px;
+    }
+
+    .slide-container {
+      width: 100%;
+      height: 720px;
+      margin: 0 auto;
+      overflow: hidden;
+      box-sizing: border-box;
+      position: relative;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      border: 1px solid rgba(168, 85, 247, 0.2);
+    }
+
+    .interactive-glow {
+      animation: pulseGlow 3s infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 15px rgba(124, 58, 237, 0.2); }
+      100% { box-shadow: 0 0 30px rgba(56, 189, 248, 0.5); }
+    }
+
+    .moving-plane {
+      position: absolute;
+      top: -14px;
+      animation: flyRoute 4s linear infinite;
+      color: #38bdf8;
+      font-size: 20px;
+      text-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+    }
+
+    @keyframes flyRoute {
+      0% { left: 0%; transform: scale(0.8); }
+      50% { transform: scale(1.2) translateY(-4px); }
+      100% { left: 100%; transform: scale(0.8); }
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      50.1%, 100% { opacity: 0; }
+    }
+
+    .floating-hearts-container {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .floating-heart {
+      position: absolute;
+      color: rgba(168, 85, 247, 0.4);
+      animation: floatUp 6s linear infinite;
+      bottom: -50px;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(0.8); opacity: 0; }
+      20% { opacity: 0.9; }
+      80% { opacity: 0.9; }
+      100% { transform: translateY(-780px) scale(1.3); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="presentation-wrapper">
+  
+  <!-- Slide 1: Terminal Interativo com Efeito de Digitação Real -->
+  <div class="slide-container interactive-glow" id="slide1" style="background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); padding: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <div style="width: 100%; max-width: 780px; background: #13111c; border-radius: 12px; border: 1px solid rgba(168, 85, 247, 0.3); box-shadow: 0 20px 50px rgba(0,0,0,0.6); overflow: hidden;">
+      <div style="background: #1a1726; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div style="display: flex; gap: 8px;">
+          <div style="width: 12px; height: 12px; background: #ef4444; border-radius: 50%;"></div>
+          <div style="width: 12px; height: 12px; background: #f59e0b; border-radius: 50%;"></div>
+          <div style="width: 12px; height: 12px; background: #10b981; border-radius: 50%;"></div>
+        </div>
+        <div style="font-family: 'Fira Code', monospace; font-size: 13px; color: #94a3b8;">carta.love — bash</div>
+        <div style="width: 40px;"></div>
+      </div>
+      
+      <div id="terminal-body" style="padding: 28px; font-family: 'Fira Code', monospace; font-size: 15px; color: #f8fafc; line-height: 1.9; text-align: left; min-height: 260px;">
+        <!-- Preenchido dinamicamente via script com efeito de digitação -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 2: Conexão Estilizada com Avião em Movimento -->
+  <div class="slide-container" id="slide2" style="background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); padding: 64px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center;">
+    <div style="font-family: 'Fira Code', monospace; font-size: 14px; color: #c084fc; letter-spacing: 2px;">// conexão</div>
+    
+    <div>
+      <h1 style="font-size: 42px; font-weight: 800; color: #f8fafc; margin-bottom: 12px;">
+        De Manaus pra São Paulo,<br>sem nenhum lag.
+      </h1>
+    </div>
+
+    <div style="width: 100%; max-width: 600px; display: flex; justify-content: space-between; align-items: center; position: relative; margin: 20px 0;">
+      <div style="text-align: left;">
+        <div style="font-family: 'Fira Code', monospace; font-size: 14px; color: #38bdf8; font-weight: 600; margin-bottom: 4px;">Manaus (AM)</div>
+        <div style="width: 12px; height: 12px; background: #38bdf8; border-radius: 50%; box-shadow: 0 0 10px #38bdf8;"></div>
+      </div>
+      
+      <div style="flex-grow: 1; border-top: 2px dashed rgba(168, 85, 247, 0.5); margin: 0 20px; position: relative;">
+        <div class="moving-plane">
+          <i class="fa-solid fa-plane"></i>
+        </div>
+      </div>
+
+      <div style="text-align: right;">
+        <div style="font-family: 'Fira Code', monospace; font-size: 14px; color: #c084fc; font-weight: 600; margin-bottom: 4px;">São Paulo (SP)</div>
+        <div style="width: 12px; height: 12px; background: #c084fc; border-radius: 50%; box-shadow: 0 0 10px #c084fc;"></div>
+      </div>
+    </div>
+
+    <div style="font-family: 'Fira Code', monospace; font-size: 13px; color: #94a3b8;">
+      1900km de distância, zero de interferência no sinal.
+    </div>
+  </div>
+
+  <!-- Slide 3: Carta Completa em Página Única -->
+  <div class="slide-container" id="slide3" style="background: #f8fafc; color: #0f172a; padding: 50px 64px; display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <span style="font-family: 'Fira Code', monospace; font-size: 13px; color: #0284c7; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">// CARTA_AO_ME_GUSTA</span>
+        <span style="font-family: 'Fira Code', monospace; font-size: 12px; color: #7c3aed;"><i class="fa-solid fa-heart" style="color: #ef4444;"></i></span>
+      </div>
+      <h2 style="font-size: 28px; font-weight: 800; color: #0f172a;">Ao meu Me Gusta...</h2>
+    </div>
+
+    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 26px 36px; margin: 8px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.03); max-height: 480px; overflow-y: auto;">
+      <p style="font-size: 15px; color: #334155; line-height: 1.6; margin-bottom: 14px;">
+        Hoje é seu aniversário e eu fiquei pensando em como colocar em palavras o quanto você se tornou importante para mim. Acho que, em algum momento, você deixou de ser só alguém que eu conheci e passou a ser alguém que eu não consigo mais imaginar não tendo na minha vida.
+      </p>
+      <p style="font-size: 15px; color: #334155; line-height: 1.6; margin-bottom: 14px;">
+        Eu admiro cada detalhe seu, suas manias meio TDAH, seu jeito, suas particularidades e principalmente o homem que você é. É um privilégio poder te ter por perto, mesmo que eu ainda ache que seja pouco. E independente de onde a vida coloque a gente, eu sempre vou torcer por você, de perto ou de longe.
+      </p>
+      <p style="font-size: 15px; color: #334155; line-height: 1.6; margin-bottom: 14px;">
+        Eu sou muito grata por tudo que a gente já viveu. Pelos filmes que eu quase nunca consigo terminar porque sempre durmo, pelos seus jogos em que eu só sei apertar os botões descontroladamente, pelas nossas conversas no colchão da sala, pelas nossas tentativas de dançar forró, pelas noites comendo temaki e por todos esses momentos simples que, de alguma forma, se tornaram tão especiais para mim.
+      </p>
+      <p style="font-size: 15px; color: #334155; line-height: 1.6; margin-bottom: 14px;">
+        Obrigada também por me ouvir tantas vezes. Pelas minhas conversas aleatórias, pelas minhas tristezas e até pelas minhas longas explicações sobre a minha cultura. Obrigada por ter curiosidade sobre aquilo que faz parte de mim e por me permitir dividir um pouco do meu mundo com você.
+      </p>
+      <p style="font-size: 15px; color: #334155; line-height: 1.6; margin-bottom: 14px;">
+        Eu gosto de pensar que algumas pessoas simplesmente aparecem na nossa vida e deixam tudo um pouco diferente. Você foi uma dessas pessoas para mim. Eu não imaginava que iria te encontrar e muito menos que você se tornaria alguém tão importante. E que bom que eu te encontrei.
+      </p>
+      <p style="font-size: 15px; color: #334155; line-height: 1.6; margin-bottom: 14px;">
+        Eu espero que a vida seja muito boa com você. Que você realize seus sonhos, encontre motivos para sorrir e nunca esqueça o quanto é querido. Eu quero te ver feliz, vivendo tudo aquilo que você merece. E talvez você nem saiba, mas a sua felicidade também faz feliz.
+      </p>
+      <p style="font-size: 15px; color: #334155; line-height: 1.6; margin: 0; font-weight: 600; color: #7c3aed;">
+        Obrigada por ser você e por todos os pedacinhos da nossa história que já guardo comigo.
+      </p>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; color: #64748b; font-family: 'Fira Code', monospace; font-size: 13px;">
+      <span>Manaus (AM)</span>
+      <span>• • •</span>
+      <span>São Paulo (SP)</span>
+    </div>
+  </div>
+
+  <!-- Slide 4: Momentos, Mensagem de Carinho, Texto Extra e Terminal -->
+  <div class="slide-container interactive-glow" id="slide4" style="background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); color: #f8fafc; display: flex; flex-direction: column; justify-content: space-between; padding: 48px 64px; position: relative;">
+    
+    <!-- Corações Flutuantes ao Fundo -->
+    <div class="floating-hearts-container">
+      <div class="floating-heart" style="left: 10%; animation-delay: 0s; font-size: 20px;"><i class="fa-solid fa-heart"></i></div>
+      <div class="floating-heart" style="left: 30%; animation-delay: 2s; font-size: 28px;"><i class="fa-solid fa-heart"></i></div>
+      <div class="floating-heart" style="left: 55%; animation-delay: 1s; font-size: 18px;"><i class="fa-solid fa-heart"></i></div>
+      <div class="floating-heart" style="left: 80%; animation-delay: 3s; font-size: 24px;"><i class="fa-solid fa-heart"></i></div>
+      <div class="floating-heart" style="left: 92%; animation-delay: 1.5s; font-size: 22px;"><i class="fa-solid fa-heart"></i></div>
+    </div>
+
+    <!-- Topo: Os pedacinhos simples da gente -->
+    <div style="text-align: center; z-index: 1;">
+      <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 26px; font-weight: 800; color: #f8fafc; margin-bottom: 20px;">
+        Os pedacinhos simples da gente.
+      </h2>
+      <div style="display: flex; justify-content: space-around; align-items: center; gap: 16px;">
+        <div style="text-align: center; flex: 1;">
+          <div style="font-size: 24px; color: #a855f7; margin-bottom: 6px;"><i class="fa-solid fa-people-arrows"></i></div>
+          <p style="font-size: 12px; color: #94a3b8; font-family: 'Fira Code', monospace; line-height: 1.3;">nossas tentativas de forró</p>
+        </div>
+        <div style="text-align: center; flex: 1;">
+          <div style="font-size: 24px; color: #38bdf8; margin-bottom: 6px;"><i class="fa-solid fa-utensils"></i></div>
+          <p style="font-size: 12px; color: #94a3b8; font-family: 'Fira Code', monospace; line-height: 1.3;">noites de temaki</p>
+        </div>
+        <div style="text-align: center; flex: 1;">
+          <div style="font-size: 24px; color: #a855f7; margin-bottom: 6px;"><i class="fa-solid fa-gamepad"></i></div>
+          <p style="font-size: 12px; color: #94a3b8; font-family: 'Fira Code', monospace; line-height: 1.3;">seus jogos, meus botões aleatórios</p>
+        </div>
+        <div style="text-align: center; flex: 1;">
+          <div style="font-size: 24px; color: #38bdf8; margin-bottom: 6px;"><i class="fa-solid fa-couch"></i></div>
+          <p style="font-size: 12px; color: #94a3b8; font-family: 'Fira Code', monospace; line-height: 1.3;">os filmes que eu não termino</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Meio: Texto Adicionado sobre o presente e comida -->
+    <div style="text-align: center; z-index: 1; max-width: 800px; margin: 0 auto; padding: 12px 20px; background: rgba(255, 255, 255, 0.03); border-radius: 12px; border: 1px solid rgba(168, 85, 247, 0.2);">
+      <p style="font-size: 15px; color: #e2e8f0; line-height: 1.5; font-weight: 500;">
+        Espero que você goste do presente! É simples, mas foi escolhido com muito carinho e pensando, é claro, naquilo que você mais gosta: <strong style="color: #38bdf8;">COMER! 😂</strong>
+      </p>
+    </div>
+
+    <!-- Base: Terminal de Encerramento -->
+    <div style="display: flex; justify-content: center; z-index: 1;">
+      <div style="width: 100%; max-width: 650px; background: #13111c; border-radius: 12px; border: 1px solid rgba(168, 85, 247, 0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.6); overflow: hidden; padding: 18px 24px; text-align: left;">
+        <div style="font-family: 'Fira Code', monospace; font-size: 13px; line-height: 1.7;">
+          <div style="color: #c084fc; margin-bottom: 2px;">$ carta.love --executar</div>
+          <div style="color: #94a3b8;">&gt; lendo... 6 parágrafos, 1 vida inteira</div>
+          <div style="color: #10b981;">&gt; status: entregue com sucesso [OK]</div>
+          <div style="color: #38bdf8;">&gt; tempo de execução: para sempre</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  // Script para animar a digitação das linhas do terminal no Slide 1 em loop contínuo
+  const terminalLines = [
+    { text: "$ iniciando protocolo carta.love", color: "#c084fc", delay: 300 },
+    { text: "> localizando... Manaus, AM ➔ São Paulo, SP", color: "#94a3b8", delay: 900 },
+    { text: "> latência: nenhuma (amor não tem lag)", color: "#94a3b8", delay: 1500 },
+    { text: "> conexão estabelecida [OK]", color: "#10b981", delay: 2100 },
+    { text: "> compilando sentimentos... 100%", color: "#c084fc", delay: 2700 },
+    { text: "> feliz aniversário, Me Gusta 💜", color: "#f472b6", delay: 3400 }
+  ];
+
+  function runTerminalAnimation() {
+    const termContainer = document.getElementById('terminal-body');
+    if (!termContainer) return;
+    termContainer.innerHTML = '';
+
+    terminalLines.forEach((line, index) => {
+      setTimeout(() => {
+        const p = document.createElement('div');
+        p.style.color = line.color;
+        if (index === terminalLines.length - 1) {
+          p.style.fontWeight = "600";
+          p.style.marginTop = "10px";
+        }
+        p.textContent = line.text;
+        termContainer.appendChild(p);
+
+        const existingCursor = document.getElementById('active-cursor');
+        if (existingCursor) existingCursor.remove();
+
+        const cursorSpan = document.createElement('span');
+        cursorSpan.id = 'active-cursor';
+        cursorSpan.style.display = 'inline-block';
+        cursorSpan.style.width = '10px';
+        cursorSpan.style.height = '18px';
+        cursorSpan.style.backgroundColor = '#c084fc';
+        cursorSpan.style.marginLeft = '6px';
+        cursorSpan.style.verticalAlign = 'middle';
+        cursorSpan.style.animation = 'blink 1s infinite';
+        p.appendChild(cursorSpan);
+
+      }, line.delay);
+    });
+  }
+
+  window.onload = function() {
+    runTerminalAnimation();
+    setInterval(runTerminalAnimation, 8500);
+  };
+</script>
+
+</body>
+</html>
